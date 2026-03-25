@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Image Search</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <div id="api-key-modal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-icon"><i class="ri-key-2-line"></i></div>
+            <h2>Welcome to Lumina</h2>
+            <p>Please enter your Unsplash Access Key to start exploring stunning visuals.</p>
+            <div class="input-group">
+                <input type="text" id="api-key-input" placeholder="Enter Unsplash Access Key" autocomplete="off">
+            </div>
+            <button id="save-key-btn" class="primary-btn">Save Key</button>
+            <p class="modal-hint">Don't have one? Get it for free at <a href="https://unsplash.com/developers" target="_blank">unsplash.com/developers</a></p>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="logo">
+            <i class="ri-contrast-drop-2-fill"></i>
+            <span>MOKSHADA'S IMAGE</span>
+        </div>
+        <form id="search-form" class="search-bar">
+            <i class="ri-search-line search-icon"></i>
+            <input type="text" id="search-input" placeholder="Search for high-resolution images..." autocomplete="off">
+            <button type="submit" class="search-btn">Search</button>
+        </form>
+        <div class="settings">
+            <button id="reset-key-btn" title="Change API Key"><i class="ri-settings-4-line"></i></button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="intro-section" id="intro-section">
+            <h1 class="gradient-text">Discover the World's Visuals</h1>
+            <p>Powered by creators worldwide.</p>
+            <div class="popular-searches">
+                <button class="tag">Nature</button>
+                <button class="tag">Architecture</button>
+                <button class="tag">Minimalism</button>
+                <button class="tag">Technology</button>
+            </div>
+        </div>
+
+        <div class="loader" id="loader">
+            <div class="spinner"></div>
+        </div>
+
+        <div class="error-state" id="error-state">
+            <i class="ri-error-warning-line"></i>
+            <p id="error-message">Oops! Something went wrong.</p>
+        </div>
+
+        <div class="image-grid" id="image-grid">
+            <!-- Images will be injected here -->
+        </div>
+        
+        <div class="load-more-container" id="load-more-container">
+            <button id="load-more-btn" class="secondary-btn">Load More</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
